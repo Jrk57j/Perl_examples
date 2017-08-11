@@ -1,0 +1,11 @@
+#!/usr/share/perl -w
+
+@dirs = <>;
+chop @dirs;
+@paths = `find @dirs -print`;
+chop @paths;
+@c = grep(/\.c/,@paths);
+foreach $cfile(@c){
+               print "$cfile\n";
+        }
+

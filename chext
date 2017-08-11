@@ -1,0 +1,15 @@
+#!/usr/bin/perl -w
+
+$path = shift;
+$type = shift;
+$repl = shift;
+
+open(IN,"<$path");
+@fap = <IN>;
+@fap = `find @fap -print`;
+chop @fap;
+@gfap = grep(/\.$type/, @fap);
+@ifap = grep(s/\.$type/\.$repl/,@gfap);
+foreach $line(@gfap){
+        print "$line\n";
+}

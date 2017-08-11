@@ -1,0 +1,9 @@
+#!/usr/bin/perl -w
+$num = 10;
+$in = shift;
+open(IN, "<$in");
+@reverse = reverse(<IN>);
+chop @reverse;
+if(@reverse>=$num){
+	print @reverse[0..($num-1)],"\n";	
+}

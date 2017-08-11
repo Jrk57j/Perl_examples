@@ -1,0 +1,21 @@
+#!/usr/bin/perl -w
+
+$f= shift;
+$f2 = shift;
+$out = shift;
+open(IN,"<$f");
+open(IN2,"<$f2");
+open(OUT,">$out");
+@file1 = <IN>;
+@file2 = <IN2>;
+while(@file1){
+        if(@file1 == 0 && @file2 == 0){
+                last;
+        }
+        if(@file1 > 0){
+             print OUT shift @file1,"\n";
+        }
+        if(@file2 > 0){
+             print OUT shift @file2,"\n";
+        }
+}

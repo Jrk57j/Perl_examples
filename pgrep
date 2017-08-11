@@ -1,0 +1,15 @@
+#!/usr/bin/perl -w
+
+$regexp = shift;
+open(IN,"<@ARGV");
+@file = <IN>;
+#print "@file \n";
+chop @file;
+@file = `find @file -print`;
+chop @file;
+@rfile = grep(-f && -T, @file);
+foreach $file(@rfile){
+        if(/$regexp/){
+        print "@rfile: $file\n";
+       }
+}

@@ -1,0 +1,13 @@
+#!/usr/share/perl -w
+
+$num = shift;
+$f1 = shift;
+$f2 = shift;
+$out = shift;
+open(IN,"<$f1");
+open(IN2,"<$f2");
+open(OUT,">$out");
+@ff = <IN>;
+@ff2=<IN2>;
+print OUT @ff[0..$num-1]; 
+print OUT @ff2;

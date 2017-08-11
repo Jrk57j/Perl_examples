@@ -1,0 +1,9 @@
+#!/usr/bin/perl -w
+ open(IN,"<@ARGV");
+@paths = <IN>;
+@paths = `find @paths -print`;
+chop @paths;
+foreach $line(@paths){
+        print "$line\n";
+}
+ 
